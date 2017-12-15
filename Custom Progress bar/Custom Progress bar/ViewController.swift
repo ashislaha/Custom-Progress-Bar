@@ -58,13 +58,14 @@ class ViewController: UIViewController {
     private func setupCirleLayers() {
         pulsatingLayer = createShapeLayer(fillColor: .pulsatingFillColor, strokeColor: .clear)
         trackPathLayer = createShapeLayer(fillColor: .backGroundColor, strokeColor: .trackStrokeColor)
-        fillPathLayer = createShapeLayer(fillColor: .backGroundColor, strokeColor: .animatedStrokeColor)
+        fillPathLayer = createShapeLayer(fillColor: .clear, strokeColor: .animatedStrokeColor)
      
         // add to the hierarchy
         view.layer.addSublayer(pulsatingLayer)
         view.layer.addSublayer(trackPathLayer)
         view.layer.addSublayer(fillPathLayer)
         
+        trackPathLayer.strokeEnd = 1
         animatePulsatingLayer()
     }
     
